@@ -1,0 +1,144 @@
+\doxysection{Src/main.c File Reference}
+\hypertarget{main_8c}{}\label{main_8c}\index{Src/main.c@{Src/main.c}}
+
+
+\+: Main program body By\+: Johnathan W. \& Peter Tomson  
+
+
+{\ttfamily \#include "{}main.\+h"{}}\newline
+{\ttfamily \#include $<$Motor\+\_\+\+Driver.\+h$>$}\newline
+{\ttfamily \#include $<$RC\+\_\+\+Driver.\+h$>$}\newline
+{\ttfamily \#include "{}stm32f4xx.\+h"{}}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{main_8c_a70af21c671abfcc773614a9a4f63d920}{System\+Clock\+\_\+\+Config}} (void)
+\begin{DoxyCompactList}\small\item\em System Clock Configuration. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{main_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}} (void)
+\begin{DoxyCompactList}\small\item\em The application entry point. \end{DoxyCompactList}\item 
+\Hypertarget{main_8c_a77a2401a35ddd9bd0b8fc28331b81381}\label{main_8c_a77a2401a35ddd9bd0b8fc28331b81381} 
+void {\bfseries HAL\+\_\+\+TIM\+\_\+\+IC\+\_\+\+Capture\+Callback} (TIM\+\_\+\+Handle\+Type\+Def \texorpdfstring{$\ast$}{*}htim)
+\item 
+\Hypertarget{main_8c_aa025a12d45f60c7d0eae249e61f0c7f9}\label{main_8c_aa025a12d45f60c7d0eae249e61f0c7f9} 
+int {\bfseries \+\_\+write} (int file, char \texorpdfstring{$\ast$}{*}ptr, int len)
+\item 
+void \mbox{\hyperlink{main_8c_a1730ffe1e560465665eb47d9264826f9}{Error\+\_\+\+Handler}} (void)
+\begin{DoxyCompactList}\small\item\em This function is executed in case of error occurrence. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{main_8c_aac3d2c59ee0e3bbae1b99529a154eb62}\label{main_8c_aac3d2c59ee0e3bbae1b99529a154eb62} 
+TIM\+\_\+\+Handle\+Type\+Def {\bfseries htim3}
+\item 
+\Hypertarget{main_8c_a85788cec5a97ee377e4ee2e74f026484}\label{main_8c_a85788cec5a97ee377e4ee2e74f026484} 
+TIM\+\_\+\+Handle\+Type\+Def {\bfseries htim4}
+\item 
+\Hypertarget{main_8c_a31f6f787777409af5ed0d131b52b7988}\label{main_8c_a31f6f787777409af5ed0d131b52b7988} 
+TIM\+\_\+\+Handle\+Type\+Def {\bfseries htim9}
+\item 
+\Hypertarget{main_8c_ac64012958a1014b66646f0172b3e0d96}\label{main_8c_ac64012958a1014b66646f0172b3e0d96} 
+int32\+\_\+t {\bfseries duty1} = 0
+\item 
+\Hypertarget{main_8c_a82e5c310e97c51c31ba01c6bbd808864}\label{main_8c_a82e5c310e97c51c31ba01c6bbd808864} 
+int32\+\_\+t {\bfseries duty2} = 0
+\item 
+RC\+\_\+\+Signal \mbox{\hyperlink{main_8c_acfcf9795ef558d2ae7e4db33a5c2a3f9}{RC1}}
+\item 
+RC\+\_\+\+Signal \mbox{\hyperlink{main_8c_aa14a4be062c8adbbdc09cf452d4e0e0b}{RC2}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\+: Main program body By\+: Johnathan W. \& Peter Tomson 
+
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+Copyright (c) 2024 STMicroelectronics. All rights reserved.
+
+This software is licensed under terms that can be found in the LICENSE file in the root directory of this software component. If no LICENSE file comes with this software, it is provided AS-\/\+IS. 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{main_8c_a1730ffe1e560465665eb47d9264826f9}\index{main.c@{main.c}!Error\_Handler@{Error\_Handler}}
+\index{Error\_Handler@{Error\_Handler}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{Error\_Handler()}{Error\_Handler()}}
+{\footnotesize\ttfamily \label{main_8c_a1730ffe1e560465665eb47d9264826f9} 
+void Error\+\_\+\+Handler (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+This function is executed in case of error occurrence. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{main_8c_a840291bc02cba5474a4cb46a9b9566fe}\index{main.c@{main.c}!main@{main}}
+\index{main@{main}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily \label{main_8c_a840291bc02cba5474a4cb46a9b9566fe} 
+int main (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+The application entry point. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em int} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{main_8c_a70af21c671abfcc773614a9a4f63d920}\index{main.c@{main.c}!SystemClock\_Config@{SystemClock\_Config}}
+\index{SystemClock\_Config@{SystemClock\_Config}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{SystemClock\_Config()}{SystemClock\_Config()}}
+{\footnotesize\ttfamily \label{main_8c_a70af21c671abfcc773614a9a4f63d920} 
+void System\+Clock\+\_\+\+Config (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+System Clock Configuration. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+Configure the main internal regulator output voltage
+
+Initializes the RCC Oscillators according to the specified parameters in the RCC\+\_\+\+Osc\+Init\+Type\+Def structure.
+
+Initializes the CPU, AHB and APB buses clocks
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{main_8c_acfcf9795ef558d2ae7e4db33a5c2a3f9}\index{main.c@{main.c}!RC1@{RC1}}
+\index{RC1@{RC1}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{RC1}{RC1}}
+{\footnotesize\ttfamily \label{main_8c_acfcf9795ef558d2ae7e4db33a5c2a3f9} 
+RC\+\_\+\+Signal RC1}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ .tim\ =\ \&htim4,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ .ch1\ =\ TIM\_CHANNEL\_1,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ .ch2\ =\ TIM\_CHANNEL\_2,}
+\DoxyCodeLine{\ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{main_8c_aa14a4be062c8adbbdc09cf452d4e0e0b}\index{main.c@{main.c}!RC2@{RC2}}
+\index{RC2@{RC2}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{RC2}{RC2}}
+{\footnotesize\ttfamily \label{main_8c_aa14a4be062c8adbbdc09cf452d4e0e0b} 
+RC\+\_\+\+Signal RC2}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ .tim\ =\ \&htim9,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ .ch1\ =\ TIM\_CHANNEL\_1,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ .ch2\ =\ TIM\_CHANNEL\_2,}
+\DoxyCodeLine{\ \ \}}
+
+\end{DoxyCode}
