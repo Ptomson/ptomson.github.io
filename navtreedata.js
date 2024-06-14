@@ -40,7 +40,7 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"dir_b596f468b52957496e4f78b80e029268.html"
+"balance__motor__driver_8c.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

@@ -137,6 +137,7 @@ Functions</h2></td></tr>
 <tr class="memitem:a840291bc02cba5474a4cb46a9b9566fe" id="r_a840291bc02cba5474a4cb46a9b9566fe"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a840291bc02cba5474a4cb46a9b9566fe">main</a> (void)</td></tr>
 <tr class="separator:a840291bc02cba5474a4cb46a9b9566fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a77a2401a35ddd9bd0b8fc28331b81381" id="r_a77a2401a35ddd9bd0b8fc28331b81381"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a77a2401a35ddd9bd0b8fc28331b81381">HAL_TIM_IC_CaptureCallback</a> (TIM_HandleTypeDef *htim)</td></tr>
+<tr class="memdesc:a77a2401a35ddd9bd0b8fc28331b81381"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function captures the receiver PWM signal.  <br /></td></tr>
 <tr class="separator:a77a2401a35ddd9bd0b8fc28331b81381"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1730ffe1e560465665eb47d9264826f9" id="r_a1730ffe1e560465665eb47d9264826f9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1730ffe1e560465665eb47d9264826f9">Error_Handler</a> (void)</td></tr>
 <tr class="memdesc:a1730ffe1e560465665eb47d9264826f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function is executed in case of error occurrence.  <br /></td></tr>
@@ -267,7 +268,21 @@ uint16_t&#160;</td><td class="memItemRight" valign="bottom"><b>distance</b></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Runs our callback function in RC_Driver which essentially captures the pulse width of each channel</p>
+
+<p>This function captures the receiver PWM signal. </p>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">None</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">Timer</td><td>Typedef </td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Runs our callback function in RC_Driver which essentially captures the pulse width of each channel.</p>
 
 </div>
 </div>
@@ -286,7 +301,6 @@ uint16_t&#160;</td><td class="memItemRight" valign="bottom"><b>distance</b></td>
       </table>
 </div><div class="memdoc">
 <p>This is the main loop for the balance-bot. It can be thought to run in three states: Initialization, Read from pitch the IMU, Send pitch to the PID Controller, and Send a PWM signal to the motors. </p>
-<p>Resets IMU</p>
 
 </div>
 </div>
