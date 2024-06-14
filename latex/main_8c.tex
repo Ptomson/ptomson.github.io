@@ -18,9 +18,8 @@
 \doxysubsubsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{main_8c_a391fa1e490bd712720989b58fa0d9904}\label{main_8c_a391fa1e490bd712720989b58fa0d9904} 
-\#define {\bfseries PWM\+\_\+\+MAX}~4000
-\begin{DoxyCompactList}\small\item\em \texorpdfstring{$<$}{<} Values for motor pwm \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{main_8c_a391fa1e490bd712720989b58fa0d9904}{PWM\+\_\+\+MAX}}~4000
+\item 
 \Hypertarget{main_8c_a6a06d5e0af804c23442d316bd0b873d6}\label{main_8c_a6a06d5e0af804c23442d316bd0b873d6} 
 \#define {\bfseries PWM\+\_\+\+MIN}~-\/4000
 \end{DoxyCompactItemize}
@@ -38,8 +37,7 @@ void \mbox{\hyperlink{main_8c_a1730ffe1e560465665eb47d9264826f9}{Error\+\_\+\+Ha
 \doxysubsubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{main_8c_a022b068921022f560a87073615e2a606}\label{main_8c_a022b068921022f560a87073615e2a606} 
-PID\+\_\+\+Type\+Def {\bfseries APID}
+PID\+\_\+\+Type\+Def \mbox{\hyperlink{main_8c_a022b068921022f560a87073615e2a606}{APID}}
 \begin{DoxyCompactList}\small\item\em Angle PID Controller. \end{DoxyCompactList}\item 
 \Hypertarget{main_8c_af7b2c26e44dadaaa798a5c3d82914ba7}\label{main_8c_af7b2c26e44dadaaa798a5c3d82914ba7} 
 I2\+C\+\_\+\+Handle\+Type\+Def {\bfseries hi2c1}
@@ -62,13 +60,11 @@ UART\+\_\+\+Handle\+Type\+Def {\bfseries huart1}
 \Hypertarget{main_8c_aa9479c261d65eecedd3d9582f7f0f89c}\label{main_8c_aa9479c261d65eecedd3d9582f7f0f89c} 
 UART\+\_\+\+Handle\+Type\+Def {\bfseries huart2}
 \item 
-\Hypertarget{main_8c_a90d25e740447282c3be94bd2f32f6c50}\label{main_8c_a90d25e740447282c3be94bd2f32f6c50} 
-int32\+\_\+t {\bfseries on} = 0
-\begin{DoxyCompactList}\small\item\em \texorpdfstring{$<$}{<} For RC Driver\+: \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{main_8c_a90d25e740447282c3be94bd2f32f6c50}{on}} = 0
+\item 
 RC\+\_\+\+Signal \mbox{\hyperlink{main_8c_a1eac46702c054e129053ae4a2153e42c}{RC}}
-\begin{DoxyCompactList}\small\item\em For PID Controller\+: \end{DoxyCompactList}\item 
-\Hypertarget{main_8c_a0ff18966b32a757463125c24e6d70df4}\label{main_8c_a0ff18966b32a757463125c24e6d70df4} 
-char {\bfseries Out\+Buf} \mbox{[}100\mbox{]} = \{0\}
+\item 
+char \mbox{\hyperlink{main_8c_a0ff18966b32a757463125c24e6d70df4}{Out\+Buf}} \mbox{[}100\mbox{]} = \{0\}
 \item 
 \Hypertarget{main_8c_a8c10230001bab42de01beb2843f8c327}\label{main_8c_a8c10230001bab42de01beb2843f8c327} 
 double {\bfseries Angle} = 0
@@ -119,6 +115,15 @@ Johnathan Waldmire, Peter Tomson
 June 14, 2024 
 \end{DoxyDate}
 
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{main_8c_a391fa1e490bd712720989b58fa0d9904}\index{main.c@{main.c}!PWM\_MAX@{PWM\_MAX}}
+\index{PWM\_MAX@{PWM\_MAX}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{PWM\_MAX}{PWM\_MAX}}
+{\footnotesize\ttfamily \label{main_8c_a391fa1e490bd712720989b58fa0d9904} 
+\#define PWM\+\_\+\+MAX~4000}
+
+Values for motor pwm 
 
 \doxysubsection{Function Documentation}
 \Hypertarget{main_8c_a1730ffe1e560465665eb47d9264826f9}\index{main.c@{main.c}!Error\_Handler@{Error\_Handler}}
@@ -179,7 +184,29 @@ Initializes the RCC Oscillators according to the specified parameters in the RCC
 Initializes the CPU, AHB and APB buses clocks
 
 \doxysubsection{Variable Documentation}
-\Hypertarget{main_8c_a1eac46702c054e129053ae4a2153e42c}\index{main.c@{main.c}!RC@{RC}}
+\Hypertarget{main_8c_a022b068921022f560a87073615e2a606}\index{main.c@{main.c}!APID@{APID}}
+\index{APID@{APID}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{APID}{APID}}
+{\footnotesize\ttfamily \label{main_8c_a022b068921022f560a87073615e2a606} 
+PID\+\_\+\+Type\+Def APID}
+
+
+
+Angle PID Controller. 
+
+Various Drivers that were made\+: Necessities\+: \Hypertarget{main_8c_a90d25e740447282c3be94bd2f32f6c50}\index{main.c@{main.c}!on@{on}}
+\index{on@{on}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{on}{on}}
+{\footnotesize\ttfamily \label{main_8c_a90d25e740447282c3be94bd2f32f6c50} 
+int32\+\_\+t on = 0}
+
+For RC Driver\+: RC is the structure. \Hypertarget{main_8c_a0ff18966b32a757463125c24e6d70df4}\index{main.c@{main.c}!OutBuf@{OutBuf}}
+\index{OutBuf@{OutBuf}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{OutBuf}{OutBuf}}
+{\footnotesize\ttfamily \label{main_8c_a0ff18966b32a757463125c24e6d70df4} 
+char Out\+Buf\mbox{[}100\mbox{]} = \{0\}}
+
+For PID Controller\+: \Hypertarget{main_8c_a1eac46702c054e129053ae4a2153e42c}\index{main.c@{main.c}!RC@{RC}}
 \index{RC@{RC}!main.c@{main.c}}
 \doxysubsubsection{\texorpdfstring{RC}{RC}}
 {\footnotesize\ttfamily \label{main_8c_a1eac46702c054e129053ae4a2153e42c} 
@@ -187,14 +214,10 @@ RC\+\_\+\+Signal RC}
 
 {\bfseries Initial value\+:}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{=\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{=\ \{}
 \DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .tim\ =\ \&htim3,}
 \DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .ch1\ =\ TIM\_CHANNEL\_1,}
 \DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .ch2\ =\ TIM\_CHANNEL\_2,}
 \DoxyCodeLine{\ \ \ \ \}}
 
 \end{DoxyCode}
-
-
-For PID Controller\+: 
-
