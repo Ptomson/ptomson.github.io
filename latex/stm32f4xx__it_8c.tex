@@ -1,5 +1,5 @@
-\doxysection{Src/stm32f4xx\+\_\+it.c File Reference}
-\hypertarget{stm32f4xx__it_8c}{}\label{stm32f4xx__it_8c}\index{Src/stm32f4xx\_it.c@{Src/stm32f4xx\_it.c}}
+\doxysection{Core/\+Src/stm32f4xx\+\_\+it.c File Reference}
+\hypertarget{stm32f4xx__it_8c}{}\label{stm32f4xx__it_8c}\index{Core/Src/stm32f4xx\_it.c@{Core/Src/stm32f4xx\_it.c}}
 
 
 Interrupt Service Routines.  
@@ -37,20 +37,26 @@ void {\bfseries Pend\+SV\+\_\+\+Handler} (void)
 \Hypertarget{stm32f4xx__it_8c_ab5e09814056d617c521549e542639b7e}\label{stm32f4xx__it_8c_ab5e09814056d617c521549e542639b7e} 
 void {\bfseries Sys\+Tick\+\_\+\+Handler} (void)
 \begin{DoxyCompactList}\small\item\em This function handles System tick timer. \end{DoxyCompactList}\item 
-\Hypertarget{stm32f4xx__it_8c_a3b60f6118cdd3449f4ed29fde4704236}\label{stm32f4xx__it_8c_a3b60f6118cdd3449f4ed29fde4704236} 
-void {\bfseries TIM1\+\_\+\+BRK\+\_\+\+TIM9\+\_\+\+IRQHandler} (void)
-\begin{DoxyCompactList}\small\item\em This function handles TIM1 break interrupt and TIM9 global interrupt. \end{DoxyCompactList}\item 
-\Hypertarget{stm32f4xx__it_8c_a7133f3f78767503641d307386e68bd28}\label{stm32f4xx__it_8c_a7133f3f78767503641d307386e68bd28} 
-void {\bfseries TIM4\+\_\+\+IRQHandler} (void)
-\begin{DoxyCompactList}\small\item\em This function handles TIM4 global interrupt. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\Hypertarget{stm32f4xx__it_8c_a1b70a4441662b1d6548e803499da414f}\label{stm32f4xx__it_8c_a1b70a4441662b1d6548e803499da414f} 
+void {\bfseries DMA1\+\_\+\+Stream0\+\_\+\+IRQHandler} (void)
+\begin{DoxyCompactList}\small\item\em This function handles DMA1 stream0 global interrupt. \end{DoxyCompactList}\item 
+\Hypertarget{stm32f4xx__it_8c_a31783ba032a9c7268a10ba2b4c59a9fd}\label{stm32f4xx__it_8c_a31783ba032a9c7268a10ba2b4c59a9fd} 
+void {\bfseries DMA1\+\_\+\+Stream1\+\_\+\+IRQHandler} (void)
+\begin{DoxyCompactList}\small\item\em This function handles DMA1 stream1 global interrupt. \end{DoxyCompactList}\item 
+\Hypertarget{stm32f4xx__it_8c_ac8e51d2183b5230cbd5481f8867adce9}\label{stm32f4xx__it_8c_ac8e51d2183b5230cbd5481f8867adce9} 
+void {\bfseries TIM3\+\_\+\+IRQHandler} (void)
+\begin{DoxyCompactList}\small\item\em This function handles TIM3 global interrupt. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{stm32f4xx__it_8c_a85788cec5a97ee377e4ee2e74f026484}\label{stm32f4xx__it_8c_a85788cec5a97ee377e4ee2e74f026484} 
-TIM\+\_\+\+Handle\+Type\+Def {\bfseries htim4}
+\Hypertarget{stm32f4xx__it_8c_a9cf31216ab15c3f167902641b70c0f38}\label{stm32f4xx__it_8c_a9cf31216ab15c3f167902641b70c0f38} 
+DMA\+\_\+\+Handle\+Type\+Def {\bfseries hdma\+\_\+i2c1\+\_\+rx}
 \item 
-\Hypertarget{stm32f4xx__it_8c_a31f6f787777409af5ed0d131b52b7988}\label{stm32f4xx__it_8c_a31f6f787777409af5ed0d131b52b7988} 
-TIM\+\_\+\+Handle\+Type\+Def {\bfseries htim9}
+\Hypertarget{stm32f4xx__it_8c_ae4780ad74b8c24d6fffa8ec7fc8ea105}\label{stm32f4xx__it_8c_ae4780ad74b8c24d6fffa8ec7fc8ea105} 
+DMA\+\_\+\+Handle\+Type\+Def {\bfseries hdma\+\_\+i2c1\+\_\+tx}
+\item 
+\Hypertarget{stm32f4xx__it_8c_aac3d2c59ee0e3bbae1b99529a154eb62}\label{stm32f4xx__it_8c_aac3d2c59ee0e3bbae1b99529a154eb62} 
+TIM\+\_\+\+Handle\+Type\+Def {\bfseries htim3}
 \end{DoxyCompactItemize}
 
 

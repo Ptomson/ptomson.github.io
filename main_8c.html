@@ -5,12 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.11.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Lab 3: Src/main.c File Reference</title>
+<title>ME 507 - Balance Bot: Core/Src/main.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
@@ -25,9 +27,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Lab 3<span id="projectnumber">&#160;0.0.1</span>
+   <div id="projectname">ME 507 - Balance Bot
    </div>
-   <div id="projectbrief">This is a test of Doxygen</div>
+   <div id="projectbrief">This is our term project code.</div>
   </td>
  </tr>
  </tbody>
@@ -50,17 +52,29 @@ $(function() { codefold.init(0); });
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 $(function() {
-  initMenu('',true,false,'search.php','Search',false);
+  initMenu('',true,false,'search.php','Search',true);
   $(function() { init_search(); });
 });
 /* @license-end */
 </script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function(){ initResizable(false); });
+$(function(){initNavTree('main_8c.html',''); initResizable(true); });
 /* @license-end */
 </script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -82,28 +96,37 @@ $(function(){ initResizable(false); });
 </div>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_413f4e031a85da0d68269c6fd2f76e1c.html">Src</a></li>  </ul>
-</div>
-</div><!-- top -->
-<div id="doc-content">
 <div class="header">
   <div class="summary">
+<a href="#define-members">Macros</a> &#124;
 <a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle"><div class="title">main.c File Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>: Main program body By: Johnathan W. &amp; Peter Tomson  
+<p>: This is the main program for our ME 507 (Somewhat) Balance Bot  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;main.h&quot;</code><br />
-<code>#include &lt;Motor_Driver.h&gt;</code><br />
-<code>#include &lt;RC_Driver.h&gt;</code><br />
+<code>#include &quot;balance_motor_driver.h&quot;</code><br />
+<code>#include &quot;bno055_stm32.h&quot;</code><br />
+<code>#include &quot;distance_driver.h&quot;</code><br />
+<code>#include &quot;pid.h&quot;</code><br />
+<code>#include &quot;RC_driver.h&quot;</code><br />
 <code>#include &quot;stm32f4xx.h&quot;</code><br />
+<code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
 <code>#include &lt;stdint.h&gt;</code><br />
 </div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a391fa1e490bd712720989b58fa0d9904" id="r_a391fa1e490bd712720989b58fa0d9904"><td class="memItemLeft" align="right" valign="top"><a id="a391fa1e490bd712720989b58fa0d9904" name="a391fa1e490bd712720989b58fa0d9904"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>PWM_MAX</b>&#160;&#160;&#160;4000</td></tr>
+<tr class="separator:a391fa1e490bd712720989b58fa0d9904"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a06d5e0af804c23442d316bd0b873d6" id="r_a6a06d5e0af804c23442d316bd0b873d6"><td class="memItemLeft" align="right" valign="top"><a id="a6a06d5e0af804c23442d316bd0b873d6" name="a6a06d5e0af804c23442d316bd0b873d6"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>PWM_MIN</b>&#160;&#160;&#160;-4000</td></tr>
+<tr class="separator:a6a06d5e0af804c23442d316bd0b873d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a70af21c671abfcc773614a9a4f63d920" id="r_a70af21c671abfcc773614a9a4f63d920"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a70af21c671abfcc773614a9a4f63d920">SystemClock_Config</a> (void)</td></tr>
@@ -112,43 +135,87 @@ Functions</h2></td></tr>
 <tr class="memitem:a840291bc02cba5474a4cb46a9b9566fe" id="r_a840291bc02cba5474a4cb46a9b9566fe"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a840291bc02cba5474a4cb46a9b9566fe">main</a> (void)</td></tr>
 <tr class="memdesc:a840291bc02cba5474a4cb46a9b9566fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">The application entry point.  <br /></td></tr>
 <tr class="separator:a840291bc02cba5474a4cb46a9b9566fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a77a2401a35ddd9bd0b8fc28331b81381" id="r_a77a2401a35ddd9bd0b8fc28331b81381"><td class="memItemLeft" align="right" valign="top"><a id="a77a2401a35ddd9bd0b8fc28331b81381" name="a77a2401a35ddd9bd0b8fc28331b81381"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>HAL_TIM_IC_CaptureCallback</b> (TIM_HandleTypeDef *htim)</td></tr>
+<tr class="memitem:a77a2401a35ddd9bd0b8fc28331b81381" id="r_a77a2401a35ddd9bd0b8fc28331b81381"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a77a2401a35ddd9bd0b8fc28331b81381">HAL_TIM_IC_CaptureCallback</a> (TIM_HandleTypeDef *htim)</td></tr>
 <tr class="separator:a77a2401a35ddd9bd0b8fc28331b81381"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa025a12d45f60c7d0eae249e61f0c7f9" id="r_aa025a12d45f60c7d0eae249e61f0c7f9"><td class="memItemLeft" align="right" valign="top"><a id="aa025a12d45f60c7d0eae249e61f0c7f9" name="aa025a12d45f60c7d0eae249e61f0c7f9"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>_write</b> (int file, char *ptr, int len)</td></tr>
-<tr class="separator:aa025a12d45f60c7d0eae249e61f0c7f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1730ffe1e560465665eb47d9264826f9" id="r_a1730ffe1e560465665eb47d9264826f9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1730ffe1e560465665eb47d9264826f9">Error_Handler</a> (void)</td></tr>
 <tr class="memdesc:a1730ffe1e560465665eb47d9264826f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function is executed in case of error occurrence.  <br /></td></tr>
 <tr class="separator:a1730ffe1e560465665eb47d9264826f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
+<tr class="memitem:a022b068921022f560a87073615e2a606" id="r_a022b068921022f560a87073615e2a606"><td class="memItemLeft" align="right" valign="top"><a id="a022b068921022f560a87073615e2a606" name="a022b068921022f560a87073615e2a606"></a>
+PID_TypeDef&#160;</td><td class="memItemRight" valign="bottom"><b>APID</b></td></tr>
+<tr class="separator:a022b068921022f560a87073615e2a606"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7b2c26e44dadaaa798a5c3d82914ba7" id="r_af7b2c26e44dadaaa798a5c3d82914ba7"><td class="memItemLeft" align="right" valign="top"><a id="af7b2c26e44dadaaa798a5c3d82914ba7" name="af7b2c26e44dadaaa798a5c3d82914ba7"></a>
+I2C_HandleTypeDef&#160;</td><td class="memItemRight" valign="bottom"><b>hi2c1</b></td></tr>
+<tr class="separator:af7b2c26e44dadaaa798a5c3d82914ba7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9cf31216ab15c3f167902641b70c0f38" id="r_a9cf31216ab15c3f167902641b70c0f38"><td class="memItemLeft" align="right" valign="top"><a id="a9cf31216ab15c3f167902641b70c0f38" name="a9cf31216ab15c3f167902641b70c0f38"></a>
+DMA_HandleTypeDef&#160;</td><td class="memItemRight" valign="bottom"><b>hdma_i2c1_rx</b></td></tr>
+<tr class="separator:a9cf31216ab15c3f167902641b70c0f38"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4780ad74b8c24d6fffa8ec7fc8ea105" id="r_ae4780ad74b8c24d6fffa8ec7fc8ea105"><td class="memItemLeft" align="right" valign="top"><a id="ae4780ad74b8c24d6fffa8ec7fc8ea105" name="ae4780ad74b8c24d6fffa8ec7fc8ea105"></a>
+DMA_HandleTypeDef&#160;</td><td class="memItemRight" valign="bottom"><b>hdma_i2c1_tx</b></td></tr>
+<tr class="separator:ae4780ad74b8c24d6fffa8ec7fc8ea105"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c80fd5510e2990a59a5c90d745c716c" id="r_a2c80fd5510e2990a59a5c90d745c716c"><td class="memItemLeft" align="right" valign="top"><a id="a2c80fd5510e2990a59a5c90d745c716c" name="a2c80fd5510e2990a59a5c90d745c716c"></a>
+TIM_HandleTypeDef&#160;</td><td class="memItemRight" valign="bottom"><b>htim2</b></td></tr>
+<tr class="separator:a2c80fd5510e2990a59a5c90d745c716c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aac3d2c59ee0e3bbae1b99529a154eb62" id="r_aac3d2c59ee0e3bbae1b99529a154eb62"><td class="memItemLeft" align="right" valign="top"><a id="aac3d2c59ee0e3bbae1b99529a154eb62" name="aac3d2c59ee0e3bbae1b99529a154eb62"></a>
 TIM_HandleTypeDef&#160;</td><td class="memItemRight" valign="bottom"><b>htim3</b></td></tr>
 <tr class="separator:aac3d2c59ee0e3bbae1b99529a154eb62"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a85788cec5a97ee377e4ee2e74f026484" id="r_a85788cec5a97ee377e4ee2e74f026484"><td class="memItemLeft" align="right" valign="top"><a id="a85788cec5a97ee377e4ee2e74f026484" name="a85788cec5a97ee377e4ee2e74f026484"></a>
-TIM_HandleTypeDef&#160;</td><td class="memItemRight" valign="bottom"><b>htim4</b></td></tr>
-<tr class="separator:a85788cec5a97ee377e4ee2e74f026484"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a31f6f787777409af5ed0d131b52b7988" id="r_a31f6f787777409af5ed0d131b52b7988"><td class="memItemLeft" align="right" valign="top"><a id="a31f6f787777409af5ed0d131b52b7988" name="a31f6f787777409af5ed0d131b52b7988"></a>
-TIM_HandleTypeDef&#160;</td><td class="memItemRight" valign="bottom"><b>htim9</b></td></tr>
-<tr class="separator:a31f6f787777409af5ed0d131b52b7988"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac64012958a1014b66646f0172b3e0d96" id="r_ac64012958a1014b66646f0172b3e0d96"><td class="memItemLeft" align="right" valign="top"><a id="ac64012958a1014b66646f0172b3e0d96" name="ac64012958a1014b66646f0172b3e0d96"></a>
-int32_t&#160;</td><td class="memItemRight" valign="bottom"><b>duty1</b> = 0</td></tr>
-<tr class="separator:ac64012958a1014b66646f0172b3e0d96"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a82e5c310e97c51c31ba01c6bbd808864" id="r_a82e5c310e97c51c31ba01c6bbd808864"><td class="memItemLeft" align="right" valign="top"><a id="a82e5c310e97c51c31ba01c6bbd808864" name="a82e5c310e97c51c31ba01c6bbd808864"></a>
-int32_t&#160;</td><td class="memItemRight" valign="bottom"><b>duty2</b> = 0</td></tr>
-<tr class="separator:a82e5c310e97c51c31ba01c6bbd808864"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acfcf9795ef558d2ae7e4db33a5c2a3f9" id="r_acfcf9795ef558d2ae7e4db33a5c2a3f9"><td class="memItemLeft" align="right" valign="top">RC_Signal&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acfcf9795ef558d2ae7e4db33a5c2a3f9">RC1</a></td></tr>
-<tr class="separator:acfcf9795ef558d2ae7e4db33a5c2a3f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa14a4be062c8adbbdc09cf452d4e0e0b" id="r_aa14a4be062c8adbbdc09cf452d4e0e0b"><td class="memItemLeft" align="right" valign="top">RC_Signal&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa14a4be062c8adbbdc09cf452d4e0e0b">RC2</a></td></tr>
-<tr class="separator:aa14a4be062c8adbbdc09cf452d4e0e0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2cf715bef37f7e8ef385a30974a5f0d5" id="r_a2cf715bef37f7e8ef385a30974a5f0d5"><td class="memItemLeft" align="right" valign="top"><a id="a2cf715bef37f7e8ef385a30974a5f0d5" name="a2cf715bef37f7e8ef385a30974a5f0d5"></a>
+UART_HandleTypeDef&#160;</td><td class="memItemRight" valign="bottom"><b>huart1</b></td></tr>
+<tr class="separator:a2cf715bef37f7e8ef385a30974a5f0d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9479c261d65eecedd3d9582f7f0f89c" id="r_aa9479c261d65eecedd3d9582f7f0f89c"><td class="memItemLeft" align="right" valign="top"><a id="aa9479c261d65eecedd3d9582f7f0f89c" name="aa9479c261d65eecedd3d9582f7f0f89c"></a>
+UART_HandleTypeDef&#160;</td><td class="memItemRight" valign="bottom"><b>huart2</b></td></tr>
+<tr class="separator:aa9479c261d65eecedd3d9582f7f0f89c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2bfeda151226d143dbb6eff94d498e5" id="r_ab2bfeda151226d143dbb6eff94d498e5"><td class="memItemLeft" align="right" valign="top"><a id="ab2bfeda151226d143dbb6eff94d498e5" name="ab2bfeda151226d143dbb6eff94d498e5"></a>
+char&#160;</td><td class="memItemRight" valign="bottom"><b>buf</b> [100] = {0}</td></tr>
+<tr class="separator:ab2bfeda151226d143dbb6eff94d498e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90d25e740447282c3be94bd2f32f6c50" id="r_a90d25e740447282c3be94bd2f32f6c50"><td class="memItemLeft" align="right" valign="top"><a id="a90d25e740447282c3be94bd2f32f6c50" name="a90d25e740447282c3be94bd2f32f6c50"></a>
+int32_t&#160;</td><td class="memItemRight" valign="bottom"><b>on</b> = 0</td></tr>
+<tr class="separator:a90d25e740447282c3be94bd2f32f6c50"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1eac46702c054e129053ae4a2153e42c" id="r_a1eac46702c054e129053ae4a2153e42c"><td class="memItemLeft" align="right" valign="top">RC_Signal&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1eac46702c054e129053ae4a2153e42c">RC</a></td></tr>
+<tr class="separator:a1eac46702c054e129053ae4a2153e42c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ff18966b32a757463125c24e6d70df4" id="r_a0ff18966b32a757463125c24e6d70df4"><td class="memItemLeft" align="right" valign="top"><a id="a0ff18966b32a757463125c24e6d70df4" name="a0ff18966b32a757463125c24e6d70df4"></a>
+char&#160;</td><td class="memItemRight" valign="bottom"><b>OutBuf</b> [100] = {0}</td></tr>
+<tr class="separator:a0ff18966b32a757463125c24e6d70df4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c10230001bab42de01beb2843f8c327" id="r_a8c10230001bab42de01beb2843f8c327"><td class="memItemLeft" align="right" valign="top"><a id="a8c10230001bab42de01beb2843f8c327" name="a8c10230001bab42de01beb2843f8c327"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><b>Angle</b> = 0</td></tr>
+<tr class="separator:a8c10230001bab42de01beb2843f8c327"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a74b83a669114ac0b8ab0d6e8b7a0fc67" id="r_a74b83a669114ac0b8ab0d6e8b7a0fc67"><td class="memItemLeft" align="right" valign="top"><a id="a74b83a669114ac0b8ab0d6e8b7a0fc67" name="a74b83a669114ac0b8ab0d6e8b7a0fc67"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><b>PIDOut</b> = 0</td></tr>
+<tr class="separator:a74b83a669114ac0b8ab0d6e8b7a0fc67"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6f8ea9f985b08fa972648b6e1927e79" id="r_ae6f8ea9f985b08fa972648b6e1927e79"><td class="memItemLeft" align="right" valign="top"><a id="ae6f8ea9f985b08fa972648b6e1927e79" name="ae6f8ea9f985b08fa972648b6e1927e79"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><b>AngleSetpoint</b> = 90</td></tr>
+<tr class="separator:ae6f8ea9f985b08fa972648b6e1927e79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a7e86a7084350c8a71abb3c8670e25d" id="r_a5a7e86a7084350c8a71abb3c8670e25d"><td class="memItemLeft" align="right" valign="top"><a id="a5a7e86a7084350c8a71abb3c8670e25d" name="a5a7e86a7084350c8a71abb3c8670e25d"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><b>MAX_PID</b> = 100</td></tr>
+<tr class="separator:a5a7e86a7084350c8a71abb3c8670e25d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d2967493b58e20195da8e170831cd24" id="r_a3d2967493b58e20195da8e170831cd24"><td class="memItemLeft" align="right" valign="top"><a id="a3d2967493b58e20195da8e170831cd24" name="a3d2967493b58e20195da8e170831cd24"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><b>MIN_PID</b> = -100</td></tr>
+<tr class="separator:a3d2967493b58e20195da8e170831cd24"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3268ea4e370880e1a5b178095ed4a867" id="r_a3268ea4e370880e1a5b178095ed4a867"><td class="memItemLeft" align="right" valign="top"><a id="a3268ea4e370880e1a5b178095ed4a867" name="a3268ea4e370880e1a5b178095ed4a867"></a>
+int32_t&#160;</td><td class="memItemRight" valign="bottom"><b>pwm_value</b></td></tr>
+<tr class="separator:a3268ea4e370880e1a5b178095ed4a867"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d23d983139781bdb6907432d10b837b" id="r_a1d23d983139781bdb6907432d10b837b"><td class="memItemLeft" align="right" valign="top"><a id="a1d23d983139781bdb6907432d10b837b" name="a1d23d983139781bdb6907432d10b837b"></a>
+char&#160;</td><td class="memItemRight" valign="bottom"><b>dist</b> [50] = {0}</td></tr>
+<tr class="separator:a1d23d983139781bdb6907432d10b837b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d5b11991a23af82ab0602b207b72387" id="r_a4d5b11991a23af82ab0602b207b72387"><td class="memItemLeft" align="right" valign="top"><a id="a4d5b11991a23af82ab0602b207b72387" name="a4d5b11991a23af82ab0602b207b72387"></a>
+uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>buffer</b> [2] = {0}</td></tr>
+<tr class="separator:a4d5b11991a23af82ab0602b207b72387"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad99a3f990d972bf0b87f25fd507eb599" id="r_ad99a3f990d972bf0b87f25fd507eb599"><td class="memItemLeft" align="right" valign="top"><a id="ad99a3f990d972bf0b87f25fd507eb599" name="ad99a3f990d972bf0b87f25fd507eb599"></a>
+uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>read</b> = 0x55</td></tr>
+<tr class="separator:ad99a3f990d972bf0b87f25fd507eb599"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ae9d3ad463ec7a0eb38ee23a15c51e7" id="r_a7ae9d3ad463ec7a0eb38ee23a15c51e7"><td class="memItemLeft" align="right" valign="top"><a id="a7ae9d3ad463ec7a0eb38ee23a15c51e7" name="a7ae9d3ad463ec7a0eb38ee23a15c51e7"></a>
+uint16_t&#160;</td><td class="memItemRight" valign="bottom"><b>distance</b></td></tr>
+<tr class="separator:a7ae9d3ad463ec7a0eb38ee23a15c51e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>: Main program body By: Johnathan W. &amp; Peter Tomson </p>
+<div class="textblock"><p>: This is the main program for our ME 507 (Somewhat) Balance Bot </p>
 <dl class="section attention"><dt>Attention</dt><dd></dd></dl>
 <p>Copyright (c) 2024 STMicroelectronics. All rights reserved.</p>
-<p>This software is licensed under terms that can be found in the LICENSE file in the root directory of this software component. If no LICENSE file comes with this software, it is provided AS-IS. </p>
+<p>This software is licensed under terms that can be found in the LICENSE file in the root directory of this software component. If no LICENSE file comes with this software, it is provided AS-IS.</p>
+<dl class="section author"><dt>Author</dt><dd>Johnathan Waldmire, Peter Tomson </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>June 14th, 2024 </dd></dl>
 </div><h2 class="groupheader">Function Documentation</h2>
 <a id="a1730ffe1e560465665eb47d9264826f9" name="a1730ffe1e560465665eb47d9264826f9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1730ffe1e560465665eb47d9264826f9">&#9670;&#160;</a></span>Error_Handler()</h2>
@@ -172,6 +239,24 @@ int32_t&#160;</td><td class="memItemRight" valign="bottom"><b>duty2</b> = 0</td>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a77a2401a35ddd9bd0b8fc28331b81381" name="a77a2401a35ddd9bd0b8fc28331b81381"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a77a2401a35ddd9bd0b8fc28331b81381">&#9670;&#160;</a></span>HAL_TIM_IC_CaptureCallback()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void HAL_TIM_IC_CaptureCallback </td>
+          <td>(</td>
+          <td class="paramtype">TIM_HandleTypeDef *</td>          <td class="paramname"><span class="paramname"><em>htim</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Runs our callback function in RC_Driver which essentially captures the pulse width of each channel</p>
 
 </div>
 </div>
@@ -229,49 +314,33 @@ int32_t&#160;</td><td class="memItemRight" valign="bottom"><b>duty2</b> = 0</td>
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
-<a id="acfcf9795ef558d2ae7e4db33a5c2a3f9" name="acfcf9795ef558d2ae7e4db33a5c2a3f9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acfcf9795ef558d2ae7e4db33a5c2a3f9">&#9670;&#160;</a></span>RC1</h2>
+<a id="a1eac46702c054e129053ae4a2153e42c" name="a1eac46702c054e129053ae4a2153e42c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1eac46702c054e129053ae4a2153e42c">&#9670;&#160;</a></span>RC</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">RC_Signal RC1</td>
+          <td class="memname">RC_Signal RC</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line">= {</div>
-<div class="line">            .tim = &amp;htim4,</div>
-<div class="line">            .ch1 = TIM_CHANNEL_1,</div>
-<div class="line">            .ch2 = TIM_CHANNEL_2,</div>
-<div class="line">  }</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="aa14a4be062c8adbbdc09cf452d4e0e0b" name="aa14a4be062c8adbbdc09cf452d4e0e0b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa14a4be062c8adbbdc09cf452d4e0e0b">&#9670;&#160;</a></span>RC2</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">RC_Signal RC2</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">= {</div>
-<div class="line">            .tim = &amp;htim9,</div>
-<div class="line">            .ch1 = TIM_CHANNEL_1,</div>
-<div class="line">            .ch2 = TIM_CHANNEL_2,</div>
-<div class="line">  }</div>
+<div class="line">                .tim = &amp;htim3,</div>
+<div class="line">                .ch1 = TIM_CHANNEL_1,</div>
+<div class="line">                .ch2 = TIM_CHANNEL_2,</div>
+<div class="line">    }</div>
 </div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->
-<!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.11.0
-</small></address>
 </div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_c6310732a22f63c0c2fc5595561e68f1.html">Core</a></li><li class="navelem"><a class="el" href="dir_b596f468b52957496e4f78b80e029268.html">Src</a></li><li class="navelem"><a class="el" href="main_8c.html">main.c</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.11.0 </li>
+  </ul>
+</div>
 </body>
 </html>
