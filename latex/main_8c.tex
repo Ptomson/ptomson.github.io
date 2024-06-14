@@ -18,11 +18,12 @@
 \doxysubsubsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
-\#define \mbox{\hyperlink{main_8c_a391fa1e490bd712720989b58fa0d9904}{PWM\+\_\+\+MAX}}~4000
-\item 
+\Hypertarget{main_8c_a391fa1e490bd712720989b58fa0d9904}\label{main_8c_a391fa1e490bd712720989b58fa0d9904} 
+\#define {\bfseries PWM\+\_\+\+MAX}~4000
+\begin{DoxyCompactList}\small\item\em Maximum motor PWM. \end{DoxyCompactList}\item 
 \Hypertarget{main_8c_a6a06d5e0af804c23442d316bd0b873d6}\label{main_8c_a6a06d5e0af804c23442d316bd0b873d6} 
 \#define {\bfseries PWM\+\_\+\+MIN}~-\/4000
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Minimum motor PWM. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -60,30 +61,32 @@ UART\+\_\+\+Handle\+Type\+Def {\bfseries huart1}
 \Hypertarget{main_8c_aa9479c261d65eecedd3d9582f7f0f89c}\label{main_8c_aa9479c261d65eecedd3d9582f7f0f89c} 
 UART\+\_\+\+Handle\+Type\+Def {\bfseries huart2}
 \item 
-int32\+\_\+t \mbox{\hyperlink{main_8c_a90d25e740447282c3be94bd2f32f6c50}{on}} = 0
-\begin{DoxyCompactList}\small\item\em Tests if the controller is reading a pwm signal. \end{DoxyCompactList}\item 
+\Hypertarget{main_8c_a90d25e740447282c3be94bd2f32f6c50}\label{main_8c_a90d25e740447282c3be94bd2f32f6c50} 
+int32\+\_\+t {\bfseries on} = 0
+\begin{DoxyCompactList}\small\item\em Tests if the controller is reading a PWM signal. \end{DoxyCompactList}\item 
 RC\+\_\+\+Signal \mbox{\hyperlink{main_8c_a1eac46702c054e129053ae4a2153e42c}{RC}}
 \item 
-char \mbox{\hyperlink{main_8c_a0ff18966b32a757463125c24e6d70df4}{Out\+Buf}} \mbox{[}100\mbox{]} = \{0\}
-\item 
+\Hypertarget{main_8c_a0ff18966b32a757463125c24e6d70df4}\label{main_8c_a0ff18966b32a757463125c24e6d70df4} 
+char {\bfseries Out\+Buf} \mbox{[}100\mbox{]} = \{0\}
+\begin{DoxyCompactList}\small\item\em Output array for the PID controller. \end{DoxyCompactList}\item 
 \Hypertarget{main_8c_a8c10230001bab42de01beb2843f8c327}\label{main_8c_a8c10230001bab42de01beb2843f8c327} 
 double {\bfseries Angle} = 0
-\item 
+\begin{DoxyCompactList}\small\item\em Angle read from the IMU. \end{DoxyCompactList}\item 
 \Hypertarget{main_8c_a74b83a669114ac0b8ab0d6e8b7a0fc67}\label{main_8c_a74b83a669114ac0b8ab0d6e8b7a0fc67} 
 double {\bfseries PIDOut} = 0
-\item 
+\begin{DoxyCompactList}\small\item\em Actual output for the PID controller. \end{DoxyCompactList}\item 
 \Hypertarget{main_8c_ae6f8ea9f985b08fa972648b6e1927e79}\label{main_8c_ae6f8ea9f985b08fa972648b6e1927e79} 
 double {\bfseries Angle\+Setpoint} = 90
-\item 
+\begin{DoxyCompactList}\small\item\em Set point for the PID controller. \end{DoxyCompactList}\item 
 \Hypertarget{main_8c_a5a7e86a7084350c8a71abb3c8670e25d}\label{main_8c_a5a7e86a7084350c8a71abb3c8670e25d} 
 double {\bfseries MAX\+\_\+\+PID} = 100
-\item 
+\begin{DoxyCompactList}\small\item\em Maximum value for PID controller. \end{DoxyCompactList}\item 
 \Hypertarget{main_8c_a3d2967493b58e20195da8e170831cd24}\label{main_8c_a3d2967493b58e20195da8e170831cd24} 
 double {\bfseries MIN\+\_\+\+PID} = -\/100
-\item 
+\begin{DoxyCompactList}\small\item\em Minimum value for PID controller. \end{DoxyCompactList}\item 
 \Hypertarget{main_8c_a3268ea4e370880e1a5b178095ed4a867}\label{main_8c_a3268ea4e370880e1a5b178095ed4a867} 
 int32\+\_\+t {\bfseries pwm\+\_\+value}
-\item 
+\begin{DoxyCompactList}\small\item\em Converted PID -\/\texorpdfstring{$>$}{>} PWM value. \end{DoxyCompactList}\item 
 \Hypertarget{main_8c_a1d23d983139781bdb6907432d10b837b}\label{main_8c_a1d23d983139781bdb6907432d10b837b} 
 char {\bfseries dist} \mbox{[}50\mbox{]} = \{0\}
 \item 
@@ -115,15 +118,6 @@ Johnathan Waldmire, Peter Tomson
 June 14, 2024 
 \end{DoxyDate}
 
-
-\doxysubsection{Macro Definition Documentation}
-\Hypertarget{main_8c_a391fa1e490bd712720989b58fa0d9904}\index{main.c@{main.c}!PWM\_MAX@{PWM\_MAX}}
-\index{PWM\_MAX@{PWM\_MAX}!main.c@{main.c}}
-\doxysubsubsection{\texorpdfstring{PWM\_MAX}{PWM\_MAX}}
-{\footnotesize\ttfamily \label{main_8c_a391fa1e490bd712720989b58fa0d9904} 
-\#define PWM\+\_\+\+MAX~4000}
-
-Values for motor pwm 
 
 \doxysubsection{Function Documentation}
 \Hypertarget{main_8c_a1730ffe1e560465665eb47d9264826f9}\index{main.c@{main.c}!Error\_Handler@{Error\_Handler}}
@@ -194,23 +188,7 @@ PID\+\_\+\+Type\+Def APID}
 
 Angle PID Controller. 
 
-Various Drivers that were made\+: Necessities\+: \Hypertarget{main_8c_a90d25e740447282c3be94bd2f32f6c50}\index{main.c@{main.c}!on@{on}}
-\index{on@{on}!main.c@{main.c}}
-\doxysubsubsection{\texorpdfstring{on}{on}}
-{\footnotesize\ttfamily \label{main_8c_a90d25e740447282c3be94bd2f32f6c50} 
-int32\+\_\+t on = 0}
-
-
-
-Tests if the controller is reading a pwm signal. 
-
-For RC Driver\+: RC is the structure. \Hypertarget{main_8c_a0ff18966b32a757463125c24e6d70df4}\index{main.c@{main.c}!OutBuf@{OutBuf}}
-\index{OutBuf@{OutBuf}!main.c@{main.c}}
-\doxysubsubsection{\texorpdfstring{OutBuf}{OutBuf}}
-{\footnotesize\ttfamily \label{main_8c_a0ff18966b32a757463125c24e6d70df4} 
-char Out\+Buf\mbox{[}100\mbox{]} = \{0\}}
-
-For PID Controller\+: \Hypertarget{main_8c_a1eac46702c054e129053ae4a2153e42c}\index{main.c@{main.c}!RC@{RC}}
+Various Drivers that were made\+: Necessities\+: \Hypertarget{main_8c_a1eac46702c054e129053ae4a2153e42c}\index{main.c@{main.c}!RC@{RC}}
 \index{RC@{RC}!main.c@{main.c}}
 \doxysubsubsection{\texorpdfstring{RC}{RC}}
 {\footnotesize\ttfamily \label{main_8c_a1eac46702c054e129053ae4a2153e42c} 
@@ -225,3 +203,4 @@ RC\+\_\+\+Signal RC}
 \DoxyCodeLine{\ \ \ \ \}}
 
 \end{DoxyCode}
+This is the RC object used for the RC receiver. The Receiver was used as a kill switch for this project. The trigger must be held in order for the motors to spin. 
