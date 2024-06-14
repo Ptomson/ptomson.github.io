@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['pidout_0',['PIDOut',['../main_8c.html#a74b83a669114ac0b8ab0d6e8b7a0fc67',1,'main.c']]],
-  ['pwm_5fvalue_1',['pwm_value',['../main_8c.html#a3268ea4e370880e1a5b178095ed4a867',1,'main.c']]]
+  ['max_5fpid_0',['MAX_PID',['../main_8c.html#a5a7e86a7084350c8a71abb3c8670e25d',1,'main.c']]],
+  ['min_5fpid_1',['MIN_PID',['../main_8c.html#a3d2967493b58e20195da8e170831cd24',1,'main.c']]]
 ];

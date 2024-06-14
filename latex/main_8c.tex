@@ -30,7 +30,7 @@
 void \mbox{\hyperlink{main_8c_a70af21c671abfcc773614a9a4f63d920}{System\+Clock\+\_\+\+Config}} (void)
 \begin{DoxyCompactList}\small\item\em System Clock Configuration. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{main_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}} (void)
-\begin{DoxyCompactList}\small\item\em The application entry point. \end{DoxyCompactList}\item 
+\item 
 void \mbox{\hyperlink{main_8c_a77a2401a35ddd9bd0b8fc28331b81381}{HAL\+\_\+\+TIM\+\_\+\+IC\+\_\+\+Capture\+Callback}} (TIM\+\_\+\+Handle\+Type\+Def \texorpdfstring{$\ast$}{*}htim)
 \item 
 void \mbox{\hyperlink{main_8c_a1730ffe1e560465665eb47d9264826f9}{Error\+\_\+\+Handler}} (void)
@@ -38,7 +38,8 @@ void \mbox{\hyperlink{main_8c_a1730ffe1e560465665eb47d9264826f9}{Error\+\_\+\+Ha
 \doxysubsubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
-PID\+\_\+\+Type\+Def \mbox{\hyperlink{main_8c_a022b068921022f560a87073615e2a606}{APID}}
+\Hypertarget{main_8c_a022b068921022f560a87073615e2a606}\label{main_8c_a022b068921022f560a87073615e2a606} 
+PID\+\_\+\+Type\+Def {\bfseries APID}
 \begin{DoxyCompactList}\small\item\em Angle PID Controller. \end{DoxyCompactList}\item 
 \Hypertarget{main_8c_af7b2c26e44dadaaa798a5c3d82914ba7}\label{main_8c_af7b2c26e44dadaaa798a5c3d82914ba7} 
 I2\+C\+\_\+\+Handle\+Type\+Def {\bfseries hi2c1}
@@ -89,16 +90,16 @@ int32\+\_\+t {\bfseries pwm\+\_\+value}
 \begin{DoxyCompactList}\small\item\em Converted PID -\/\texorpdfstring{$>$}{>} PWM value. \end{DoxyCompactList}\item 
 \Hypertarget{main_8c_a1d23d983139781bdb6907432d10b837b}\label{main_8c_a1d23d983139781bdb6907432d10b837b} 
 char {\bfseries dist} \mbox{[}50\mbox{]} = \{0\}
-\item 
+\begin{DoxyCompactList}\small\item\em Array for the distance sensor. \end{DoxyCompactList}\item 
 \Hypertarget{main_8c_a4d5b11991a23af82ab0602b207b72387}\label{main_8c_a4d5b11991a23af82ab0602b207b72387} 
 uint8\+\_\+t {\bfseries buffer} \mbox{[}2\mbox{]} = \{0\}
-\item 
+\begin{DoxyCompactList}\small\item\em Buffer to concatenate the two bytes of data into one. \end{DoxyCompactList}\item 
 \Hypertarget{main_8c_ad99a3f990d972bf0b87f25fd507eb599}\label{main_8c_ad99a3f990d972bf0b87f25fd507eb599} 
 uint8\+\_\+t {\bfseries read} = 0x55
-\item 
+\begin{DoxyCompactList}\small\item\em Value to send to the sensor in order to read data from the sensor. \end{DoxyCompactList}\item 
 \Hypertarget{main_8c_a7ae9d3ad463ec7a0eb38ee23a15c51e7}\label{main_8c_a7ae9d3ad463ec7a0eb38ee23a15c51e7} 
 uint16\+\_\+t {\bfseries distance}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Converted distance in millimeters. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -147,16 +148,7 @@ Runs our callback function in RC\+\_\+\+Driver which essentially captures the pu
 {\footnotesize\ttfamily \label{main_8c_a840291bc02cba5474a4cb46a9b9566fe} 
 int main (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
 
-
-
-The application entry point. 
-
-
-\begin{DoxyRetVals}{Return values}
-{\em int} & \\
-\hline
-\end{DoxyRetVals}
-\Hypertarget{main_8c_a70af21c671abfcc773614a9a4f63d920}\index{main.c@{main.c}!SystemClock\_Config@{SystemClock\_Config}}
+This is the main loop for the balance bot. It can be thought to run in three states\+: Initialization, Read from pitch the IMU, Send pitch to the PID Controller, and Send a PWM signal to the motors. \texorpdfstring{$<$}{<} Resets IMU\Hypertarget{main_8c_a70af21c671abfcc773614a9a4f63d920}\index{main.c@{main.c}!SystemClock\_Config@{SystemClock\_Config}}
 \index{SystemClock\_Config@{SystemClock\_Config}!main.c@{main.c}}
 \doxysubsubsection{\texorpdfstring{SystemClock\_Config()}{SystemClock\_Config()}}
 {\footnotesize\ttfamily \label{main_8c_a70af21c671abfcc773614a9a4f63d920} 
@@ -178,17 +170,7 @@ Initializes the RCC Oscillators according to the specified parameters in the RCC
 Initializes the CPU, AHB and APB buses clocks
 
 \doxysubsection{Variable Documentation}
-\Hypertarget{main_8c_a022b068921022f560a87073615e2a606}\index{main.c@{main.c}!APID@{APID}}
-\index{APID@{APID}!main.c@{main.c}}
-\doxysubsubsection{\texorpdfstring{APID}{APID}}
-{\footnotesize\ttfamily \label{main_8c_a022b068921022f560a87073615e2a606} 
-PID\+\_\+\+Type\+Def APID}
-
-
-
-Angle PID Controller. 
-
-Various Drivers that were made\+: Necessities\+: \Hypertarget{main_8c_a1eac46702c054e129053ae4a2153e42c}\index{main.c@{main.c}!RC@{RC}}
+\Hypertarget{main_8c_a1eac46702c054e129053ae4a2153e42c}\index{main.c@{main.c}!RC@{RC}}
 \index{RC@{RC}!main.c@{main.c}}
 \doxysubsubsection{\texorpdfstring{RC}{RC}}
 {\footnotesize\ttfamily \label{main_8c_a1eac46702c054e129053ae4a2153e42c} 

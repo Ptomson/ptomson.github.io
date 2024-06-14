@@ -135,7 +135,6 @@ Functions</h2></td></tr>
 <tr class="memdesc:a70af21c671abfcc773614a9a4f63d920"><td class="mdescLeft">&#160;</td><td class="mdescRight">System Clock Configuration.  <br /></td></tr>
 <tr class="separator:a70af21c671abfcc773614a9a4f63d920"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a840291bc02cba5474a4cb46a9b9566fe" id="r_a840291bc02cba5474a4cb46a9b9566fe"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a840291bc02cba5474a4cb46a9b9566fe">main</a> (void)</td></tr>
-<tr class="memdesc:a840291bc02cba5474a4cb46a9b9566fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">The application entry point.  <br /></td></tr>
 <tr class="separator:a840291bc02cba5474a4cb46a9b9566fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a77a2401a35ddd9bd0b8fc28331b81381" id="r_a77a2401a35ddd9bd0b8fc28331b81381"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a77a2401a35ddd9bd0b8fc28331b81381">HAL_TIM_IC_CaptureCallback</a> (TIM_HandleTypeDef *htim)</td></tr>
 <tr class="separator:a77a2401a35ddd9bd0b8fc28331b81381"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -145,8 +144,9 @@ Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a022b068921022f560a87073615e2a606" id="r_a022b068921022f560a87073615e2a606"><td class="memItemLeft" align="right" valign="top">PID_TypeDef&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a022b068921022f560a87073615e2a606">APID</a></td></tr>
-<tr class="memdesc:a022b068921022f560a87073615e2a606"><td class="mdescLeft">&#160;</td><td class="mdescRight">Angle PID Controller.  <br /></td></tr>
+<tr class="memitem:a022b068921022f560a87073615e2a606" id="r_a022b068921022f560a87073615e2a606"><td class="memItemLeft" align="right" valign="top"><a id="a022b068921022f560a87073615e2a606" name="a022b068921022f560a87073615e2a606"></a>
+PID_TypeDef&#160;</td><td class="memItemRight" valign="bottom"><b>APID</b></td></tr>
+<tr class="memdesc:a022b068921022f560a87073615e2a606"><td class="mdescLeft">&#160;</td><td class="mdescRight">Angle PID Controller. <br /></td></tr>
 <tr class="separator:a022b068921022f560a87073615e2a606"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af7b2c26e44dadaaa798a5c3d82914ba7" id="r_af7b2c26e44dadaaa798a5c3d82914ba7"><td class="memItemLeft" align="right" valign="top"><a id="af7b2c26e44dadaaa798a5c3d82914ba7" name="af7b2c26e44dadaaa798a5c3d82914ba7"></a>
 I2C_HandleTypeDef&#160;</td><td class="memItemRight" valign="bottom"><b>hi2c1</b></td></tr>
@@ -205,15 +205,19 @@ int32_t&#160;</td><td class="memItemRight" valign="bottom"><b>pwm_value</b></td>
 <tr class="separator:a3268ea4e370880e1a5b178095ed4a867"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1d23d983139781bdb6907432d10b837b" id="r_a1d23d983139781bdb6907432d10b837b"><td class="memItemLeft" align="right" valign="top"><a id="a1d23d983139781bdb6907432d10b837b" name="a1d23d983139781bdb6907432d10b837b"></a>
 char&#160;</td><td class="memItemRight" valign="bottom"><b>dist</b> [50] = {0}</td></tr>
+<tr class="memdesc:a1d23d983139781bdb6907432d10b837b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Array for the distance sensor. <br /></td></tr>
 <tr class="separator:a1d23d983139781bdb6907432d10b837b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4d5b11991a23af82ab0602b207b72387" id="r_a4d5b11991a23af82ab0602b207b72387"><td class="memItemLeft" align="right" valign="top"><a id="a4d5b11991a23af82ab0602b207b72387" name="a4d5b11991a23af82ab0602b207b72387"></a>
 uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>buffer</b> [2] = {0}</td></tr>
+<tr class="memdesc:a4d5b11991a23af82ab0602b207b72387"><td class="mdescLeft">&#160;</td><td class="mdescRight">Buffer to concatenate the two bytes of data into one. <br /></td></tr>
 <tr class="separator:a4d5b11991a23af82ab0602b207b72387"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad99a3f990d972bf0b87f25fd507eb599" id="r_ad99a3f990d972bf0b87f25fd507eb599"><td class="memItemLeft" align="right" valign="top"><a id="ad99a3f990d972bf0b87f25fd507eb599" name="ad99a3f990d972bf0b87f25fd507eb599"></a>
 uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>read</b> = 0x55</td></tr>
+<tr class="memdesc:ad99a3f990d972bf0b87f25fd507eb599"><td class="mdescLeft">&#160;</td><td class="mdescRight">Value to send to the sensor in order to read data from the sensor. <br /></td></tr>
 <tr class="separator:ad99a3f990d972bf0b87f25fd507eb599"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7ae9d3ad463ec7a0eb38ee23a15c51e7" id="r_a7ae9d3ad463ec7a0eb38ee23a15c51e7"><td class="memItemLeft" align="right" valign="top"><a id="a7ae9d3ad463ec7a0eb38ee23a15c51e7" name="a7ae9d3ad463ec7a0eb38ee23a15c51e7"></a>
 uint16_t&#160;</td><td class="memItemRight" valign="bottom"><b>distance</b></td></tr>
+<tr class="memdesc:a7ae9d3ad463ec7a0eb38ee23a15c51e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converted distance in millimeters. <br /></td></tr>
 <tr class="separator:a7ae9d3ad463ec7a0eb38ee23a15c51e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -281,14 +285,8 @@ uint16_t&#160;</td><td class="memItemRight" valign="bottom"><b>distance</b></td>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>The application entry point. </p>
-<dl class="retval"><dt>Return values</dt><dd>
-  <table class="retval">
-    <tr><td class="paramname">int</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
+<p>This is the main loop for the balance bot. It can be thought to run in three states: Initialization, Read from pitch the IMU, Send pitch to the PID Controller, and Send a PWM signal to the motors. </p>
+<p>&lt; Resets IMU</p>
 
 </div>
 </div>
@@ -321,23 +319,6 @@ uint16_t&#160;</td><td class="memItemRight" valign="bottom"><b>distance</b></td>
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
-<a id="a022b068921022f560a87073615e2a606" name="a022b068921022f560a87073615e2a606"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a022b068921022f560a87073615e2a606">&#9670;&#160;</a></span>APID</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">PID_TypeDef APID</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Angle PID Controller. </p>
-<p>Various Drivers that were made: Necessities: </p>
-
-</div>
-</div>
 <a id="a1eac46702c054e129053ae4a2153e42c" name="a1eac46702c054e129053ae4a2153e42c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1eac46702c054e129053ae4a2153e42c">&#9670;&#160;</a></span>RC</h2>
 
