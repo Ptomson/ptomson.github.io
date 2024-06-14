@@ -20,7 +20,7 @@
 \item 
 \Hypertarget{main_8c_a391fa1e490bd712720989b58fa0d9904}\label{main_8c_a391fa1e490bd712720989b58fa0d9904} 
 \#define {\bfseries PWM\+\_\+\+MAX}~4000
-\item 
+\begin{DoxyCompactList}\small\item\em \texorpdfstring{$<$}{<} Values for motor pwm \end{DoxyCompactList}\item 
 \Hypertarget{main_8c_a6a06d5e0af804c23442d316bd0b873d6}\label{main_8c_a6a06d5e0af804c23442d316bd0b873d6} 
 \#define {\bfseries PWM\+\_\+\+MIN}~-\/4000
 \end{DoxyCompactItemize}
@@ -40,7 +40,7 @@ void \mbox{\hyperlink{main_8c_a1730ffe1e560465665eb47d9264826f9}{Error\+\_\+\+Ha
 \item 
 \Hypertarget{main_8c_a022b068921022f560a87073615e2a606}\label{main_8c_a022b068921022f560a87073615e2a606} 
 PID\+\_\+\+Type\+Def {\bfseries APID}
-\item 
+\begin{DoxyCompactList}\small\item\em Angle PID Controller. \end{DoxyCompactList}\item 
 \Hypertarget{main_8c_af7b2c26e44dadaaa798a5c3d82914ba7}\label{main_8c_af7b2c26e44dadaaa798a5c3d82914ba7} 
 I2\+C\+\_\+\+Handle\+Type\+Def {\bfseries hi2c1}
 \item 
@@ -62,14 +62,11 @@ UART\+\_\+\+Handle\+Type\+Def {\bfseries huart1}
 \Hypertarget{main_8c_aa9479c261d65eecedd3d9582f7f0f89c}\label{main_8c_aa9479c261d65eecedd3d9582f7f0f89c} 
 UART\+\_\+\+Handle\+Type\+Def {\bfseries huart2}
 \item 
-\Hypertarget{main_8c_ab2bfeda151226d143dbb6eff94d498e5}\label{main_8c_ab2bfeda151226d143dbb6eff94d498e5} 
-char {\bfseries buf} \mbox{[}100\mbox{]} = \{0\}
-\item 
 \Hypertarget{main_8c_a90d25e740447282c3be94bd2f32f6c50}\label{main_8c_a90d25e740447282c3be94bd2f32f6c50} 
 int32\+\_\+t {\bfseries on} = 0
-\item 
+\begin{DoxyCompactList}\small\item\em \texorpdfstring{$<$}{<} For RC Driver\+: \end{DoxyCompactList}\item 
 RC\+\_\+\+Signal \mbox{\hyperlink{main_8c_a1eac46702c054e129053ae4a2153e42c}{RC}}
-\item 
+\begin{DoxyCompactList}\small\item\em For PID Controller\+: \end{DoxyCompactList}\item 
 \Hypertarget{main_8c_a0ff18966b32a757463125c24e6d70df4}\label{main_8c_a0ff18966b32a757463125c24e6d70df4} 
 char {\bfseries Out\+Buf} \mbox{[}100\mbox{]} = \{0\}
 \item 
@@ -119,7 +116,7 @@ This software is licensed under terms that can be found in the LICENSE file in t
 Johnathan Waldmire, Peter Tomson 
 \end{DoxyAuthor}
 \begin{DoxyDate}{Date}
-June 14th, 2024 
+June 14, 2024 
 \end{DoxyDate}
 
 
@@ -190,10 +187,14 @@ RC\+\_\+\+Signal RC}
 
 {\bfseries Initial value\+:}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{=\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ }
 \DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .tim\ =\ \&htim3,}
 \DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .ch1\ =\ TIM\_CHANNEL\_1,}
 \DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .ch2\ =\ TIM\_CHANNEL\_2,}
 \DoxyCodeLine{\ \ \ \ \}}
 
 \end{DoxyCode}
+
+
+For PID Controller\+: 
+

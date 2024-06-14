@@ -122,6 +122,7 @@ $(function(){initNavTree('main_8c.html',''); initResizable(true); });
 Macros</h2></td></tr>
 <tr class="memitem:a391fa1e490bd712720989b58fa0d9904" id="r_a391fa1e490bd712720989b58fa0d9904"><td class="memItemLeft" align="right" valign="top"><a id="a391fa1e490bd712720989b58fa0d9904" name="a391fa1e490bd712720989b58fa0d9904"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>PWM_MAX</b>&#160;&#160;&#160;4000</td></tr>
+<tr class="memdesc:a391fa1e490bd712720989b58fa0d9904"><td class="mdescLeft">&#160;</td><td class="mdescRight">&lt; Values for motor pwm <br /></td></tr>
 <tr class="separator:a391fa1e490bd712720989b58fa0d9904"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6a06d5e0af804c23442d316bd0b873d6" id="r_a6a06d5e0af804c23442d316bd0b873d6"><td class="memItemLeft" align="right" valign="top"><a id="a6a06d5e0af804c23442d316bd0b873d6" name="a6a06d5e0af804c23442d316bd0b873d6"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>PWM_MIN</b>&#160;&#160;&#160;-4000</td></tr>
@@ -145,6 +146,7 @@ Functions</h2></td></tr>
 Variables</h2></td></tr>
 <tr class="memitem:a022b068921022f560a87073615e2a606" id="r_a022b068921022f560a87073615e2a606"><td class="memItemLeft" align="right" valign="top"><a id="a022b068921022f560a87073615e2a606" name="a022b068921022f560a87073615e2a606"></a>
 PID_TypeDef&#160;</td><td class="memItemRight" valign="bottom"><b>APID</b></td></tr>
+<tr class="memdesc:a022b068921022f560a87073615e2a606"><td class="mdescLeft">&#160;</td><td class="mdescRight">Angle PID Controller. <br /></td></tr>
 <tr class="separator:a022b068921022f560a87073615e2a606"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af7b2c26e44dadaaa798a5c3d82914ba7" id="r_af7b2c26e44dadaaa798a5c3d82914ba7"><td class="memItemLeft" align="right" valign="top"><a id="af7b2c26e44dadaaa798a5c3d82914ba7" name="af7b2c26e44dadaaa798a5c3d82914ba7"></a>
 I2C_HandleTypeDef&#160;</td><td class="memItemRight" valign="bottom"><b>hi2c1</b></td></tr>
@@ -167,13 +169,12 @@ UART_HandleTypeDef&#160;</td><td class="memItemRight" valign="bottom"><b>huart1<
 <tr class="memitem:aa9479c261d65eecedd3d9582f7f0f89c" id="r_aa9479c261d65eecedd3d9582f7f0f89c"><td class="memItemLeft" align="right" valign="top"><a id="aa9479c261d65eecedd3d9582f7f0f89c" name="aa9479c261d65eecedd3d9582f7f0f89c"></a>
 UART_HandleTypeDef&#160;</td><td class="memItemRight" valign="bottom"><b>huart2</b></td></tr>
 <tr class="separator:aa9479c261d65eecedd3d9582f7f0f89c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab2bfeda151226d143dbb6eff94d498e5" id="r_ab2bfeda151226d143dbb6eff94d498e5"><td class="memItemLeft" align="right" valign="top"><a id="ab2bfeda151226d143dbb6eff94d498e5" name="ab2bfeda151226d143dbb6eff94d498e5"></a>
-char&#160;</td><td class="memItemRight" valign="bottom"><b>buf</b> [100] = {0}</td></tr>
-<tr class="separator:ab2bfeda151226d143dbb6eff94d498e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a90d25e740447282c3be94bd2f32f6c50" id="r_a90d25e740447282c3be94bd2f32f6c50"><td class="memItemLeft" align="right" valign="top"><a id="a90d25e740447282c3be94bd2f32f6c50" name="a90d25e740447282c3be94bd2f32f6c50"></a>
 int32_t&#160;</td><td class="memItemRight" valign="bottom"><b>on</b> = 0</td></tr>
+<tr class="memdesc:a90d25e740447282c3be94bd2f32f6c50"><td class="mdescLeft">&#160;</td><td class="mdescRight">&lt; For RC Driver: <br /></td></tr>
 <tr class="separator:a90d25e740447282c3be94bd2f32f6c50"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1eac46702c054e129053ae4a2153e42c" id="r_a1eac46702c054e129053ae4a2153e42c"><td class="memItemLeft" align="right" valign="top">RC_Signal&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1eac46702c054e129053ae4a2153e42c">RC</a></td></tr>
+<tr class="memdesc:a1eac46702c054e129053ae4a2153e42c"><td class="mdescLeft">&#160;</td><td class="mdescRight">For PID Controller:  <br /></td></tr>
 <tr class="separator:a1eac46702c054e129053ae4a2153e42c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0ff18966b32a757463125c24e6d70df4" id="r_a0ff18966b32a757463125c24e6d70df4"><td class="memItemLeft" align="right" valign="top"><a id="a0ff18966b32a757463125c24e6d70df4" name="a0ff18966b32a757463125c24e6d70df4"></a>
 char&#160;</td><td class="memItemRight" valign="bottom"><b>OutBuf</b> [100] = {0}</td></tr>
@@ -215,7 +216,7 @@ uint16_t&#160;</td><td class="memItemRight" valign="bottom"><b>distance</b></td>
 <p>Copyright (c) 2024 STMicroelectronics. All rights reserved.</p>
 <p>This software is licensed under terms that can be found in the LICENSE file in the root directory of this software component. If no LICENSE file comes with this software, it is provided AS-IS.</p>
 <dl class="section author"><dt>Author</dt><dd>Johnathan Waldmire, Peter Tomson </dd></dl>
-<dl class="section date"><dt>Date</dt><dd>June 14th, 2024 </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>June 14, 2024 </dd></dl>
 </div><h2 class="groupheader">Function Documentation</h2>
 <a id="a1730ffe1e560465665eb47d9264826f9" name="a1730ffe1e560465665eb47d9264826f9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1730ffe1e560465665eb47d9264826f9">&#9670;&#160;</a></span>Error_Handler()</h2>
@@ -325,12 +326,14 @@ uint16_t&#160;</td><td class="memItemRight" valign="bottom"><b>distance</b></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">= {</div>
+<b>Initial value:</b><div class="fragment"><div class="line">= {             </div>
 <div class="line">                .tim = &amp;htim3,</div>
 <div class="line">                .ch1 = TIM_CHANNEL_1,</div>
 <div class="line">                .ch2 = TIM_CHANNEL_2,</div>
 <div class="line">    }</div>
 </div><!-- fragment -->
+<p>For PID Controller: </p>
+
 </div>
 </div>
 </div><!-- contents -->
